@@ -1,5 +1,14 @@
-import my_project from 'ic:canisters/my_project';
+import React from 'react';
+import { createRoot } from 'react-dom/client';
+import App from './App';
 
-my_project.greet(window.prompt("Enter your name:")).then(greeting => {
-  window.alert(greeting);
-});
+const container = document.getElementById('root');
+const root = createRoot(container);
+
+root.render(
+  React.createElement(
+    React.StrictMode,
+    null,
+    React.createElement(App)
+  )
+);
